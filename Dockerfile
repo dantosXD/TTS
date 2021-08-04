@@ -11,7 +11,8 @@ WORKDIR /usr/src/app
 COPY ./requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./ /usr/src/app
+RUN pip install TTS
 
 EXPOSE 80
 
-CMD ["python", "0.0.0.0:80"]
+CMD tts-server
