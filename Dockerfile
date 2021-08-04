@@ -4,7 +4,7 @@ FROM python:3.8.3-buster
 
 RUN apk update && apk upgrade  
 
-Run apk add --no-cache make g++ bash git openssh postgresql-dev curl
+RUN apk add --no-cache make g++ bash git openssh postgresql-dev curl
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
