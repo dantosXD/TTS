@@ -14,4 +14,4 @@ COPY ./ /usr/src/app
 
 EXPOSE 80
 
-CMD ["python", "0.0.0.0:80"]
+
