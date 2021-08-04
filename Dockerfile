@@ -1,7 +1,16 @@
 FROM python:3.7-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
-RUN apk add gcc musl-dev python3-dev libffi-dev openssl-dev make
+RUN apk add --no-cache \
+        libressl-dev \
+        musl-dev \
+        libffi-dev && \
+    pip install --no-cache-dir cryptography==2.1.4 && \
+    apk del \
+        libressl-dev \
+        musl-dev \
+        libffi-dev
+        
 RUN apk update && apk upgrade && \
     apk add --no-cache make g++ bash git openssh postgresql-dev curl
 
