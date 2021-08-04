@@ -3,7 +3,7 @@ FROM python:3.8.3
 
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y make g++ bash git openssh postgresql-dev curl
+RUN apt-get install build-essential g++ bash git openssh postgresql-dev curl
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
