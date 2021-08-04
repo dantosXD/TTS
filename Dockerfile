@@ -2,7 +2,7 @@
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
-RUN apk update && apk upgrade
+RUN apt-get update 
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
