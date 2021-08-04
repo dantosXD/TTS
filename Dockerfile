@@ -1,7 +1,8 @@
 FROM python:3.8.3-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
-RUN apk add --no-cache \
+RUN apk update && apk upgrade && \
+        apk add --no-cache \
         libressl-dev \
         musl-dev \
         libffi-dev && \
@@ -11,8 +12,7 @@ RUN apk add --no-cache \
         musl-dev \
         libffi-dev
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache make g++ bash git openssh postgresql-dev curl
+RUN apk add --no-cache make g++ bash git openssh postgresql-dev curl
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
