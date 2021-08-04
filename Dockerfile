@@ -2,7 +2,7 @@ FROM python:3.8.3-buster
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
-RUN apk update && apk upgrade  
+RUN apk update 
 
 RUN apk add --no-cache make g++ bash git openssh postgresql-dev curl
 
