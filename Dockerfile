@@ -1,6 +1,8 @@
 FROM python:3.7-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
+RUN apk update && apk upgrade
+
 RUN apk add --no-cache tesseract-ocr python3 py3-numpy && \
     pip3 install --upgrade pip setuptools wheel && \
     apk add --no-cache --virtual .build-deps gcc g++ zlib-dev make python3-dev py-numpy-dev jpeg-dev && \
