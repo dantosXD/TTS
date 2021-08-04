@@ -2,8 +2,7 @@ FROM python:3.8.3
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
-RUN apt-get update \
-&& apt-get upgrade -y \
+RUN apt-get update && apt-get upgrade -y 
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
