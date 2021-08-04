@@ -2,9 +2,9 @@ FROM python:3.8.3
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
-RUN apk update 
-RUN apk upgrade 
-RUN apk add --no-cache make g++ bash git openssh postgresql-dev curl
+RUN apt-get update 
+RUN apt-get upgrade 
+RUN apt-get install --no-cache make g++ bash git openssh postgresql-dev curl
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
