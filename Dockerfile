@@ -1,9 +1,9 @@
-FROM python:3.8.3
+FROM python:3.8.3-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install make g++ bash git openssh postgresql-dev curl
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install --no-cache make g++ bash git openssh postgresql-dev curl
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
