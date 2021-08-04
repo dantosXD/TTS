@@ -4,13 +4,6 @@ FROM python:3.8.3
 
 RUN apt-get update \
 && apt-get upgrade -y \
-&& apt-get install -y \
-    libsndfile1 \
-    build-essential \
-    g++ \
-    bash \
-    git \
-    curl 
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
