@@ -1,4 +1,4 @@
-FROM python:3.8.3
+FROM python:3.7-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
