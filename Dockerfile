@@ -10,3 +10,4 @@ COPY ./ /
 RUN pip install git+https://github.com/coqui-ai/TTS
 
 EXPOSE 80
+CMD tail -f /dev/null
