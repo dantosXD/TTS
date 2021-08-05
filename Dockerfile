@@ -7,6 +7,6 @@ RUN apt-get update && apt-get upgrade -y
 COPY ./requirements.txt /
 RUN pip install -r requirements.txt
 COPY ./ /
-
+RUN pip install git+https://github.com/coqui-ai/TTS
 
 EXPOSE 80
