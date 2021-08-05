@@ -1,13 +1,11 @@
-FROM python:3.8.3
-# Uncomment the line above if you want to use a Dockerfile instead of templateId
+FROM python:3.8-slim-buster
 
+RUN python3 -m venv /opt/venv
 
 RUN apt-get update && apt-get upgrade -y 
-
-COPY ./requirements.txt /
-RUN pip install -r requirements.txt
-COPY ./ /
-RUN pip install git+https://github.com/coqui-ai/TTS
+# Install dependencies:
+COPY requirements.txt .
+RUN . /opt/venv/bin/activate && pip install -r requirements.txt
 
 EXPOSE 80
 CMD tail -f /dev/null
